@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/item.dart';
+import '../widgets/item_tile.dart';
 
 class ShoppingListPage extends StatelessWidget {
   const ShoppingListPage({super.key});
@@ -21,14 +22,7 @@ class ShoppingListPage extends StatelessWidget {
       ),
       body: ListView.builder(
         itemCount: _items.length,
-        itemBuilder: (context, index) {
-          final item = _items[index];
-          return ListTile(
-            title: Text(item.name),
-            subtitle: Text(item.desc),
-            trailing: Text('${item.price.toStringAsFixed(2)} €'),
-          );
-        },
+        itemBuilder: (context, index) => ItemTile(item: _items[index]),
       ),
     );
   }
