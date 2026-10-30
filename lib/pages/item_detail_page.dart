@@ -17,7 +17,10 @@ class ItemDetailPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const CircleAvatar(radius: 60),
+            Hero(
+              tag: item.name,
+              child: const CircleAvatar(radius: 60),
+            ),
             const SizedBox(height: 24),
             Text(
               item.name,
